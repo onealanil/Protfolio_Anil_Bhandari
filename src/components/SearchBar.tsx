@@ -19,7 +19,7 @@ const SearchBar = () => {
         type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="flex-grow w-[33rem] text-base text-gray-700 focus:outline-none"
+        className="flex-grow w-[40rem] text-base text-gray-700 focus:outline-none"
         placeholder="Search Google or type a URL"
       />
       {searchTerm && (
