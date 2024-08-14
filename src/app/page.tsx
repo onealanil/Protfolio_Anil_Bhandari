@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import TabBar from "@/components/TabBar";
 import Suggestion from "@/components/Suggestion";
 import Images from "@/components/Images";
+import Results from "@/components/Results";
 
 export default function Home() {
   return (
@@ -17,7 +18,8 @@ export default function Home() {
         <div className="w-[13%]"></div>
         <div className="w-[35%]">
           <Suggestion />
-          <Images/>
+          <Images />
+          <Results />
         </div>
       </div>
     </main>
