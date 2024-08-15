@@ -11,7 +11,7 @@ function TabBar() {
   };
 
   return (
-    <section className="mt-1">
+    <section className="mt-24">
       <div className="w-full flex border-b-[0.25px] border-gray-300">
         <div className="w-[13%]"></div>
         {tabs.map((tab) => (

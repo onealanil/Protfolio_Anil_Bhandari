@@ -4,15 +4,15 @@ function Suggestion() {
   const suggestion = [
     {
       id: 1,
-      name: "ARCON",
+      name: "Developer",
     },
     {
       id: 2,
-      name: "LinkedIn",
+      name: "Designer",
     },
     {
       id: 3,
-      name: "Raj",
+      name: "Coder",
     },
   ];
 

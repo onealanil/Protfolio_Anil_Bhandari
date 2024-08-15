@@ -7,6 +7,7 @@ import TabBar from "@/components/TabBar";
 import Suggestion from "@/components/Suggestion";
 import Images from "@/components/Images";
 import Results from "@/components/Results";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
           <Results />
         </div>
       </div>
+      <Footer/>
     </main>
   );
 }

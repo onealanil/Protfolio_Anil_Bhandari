@@ -8,42 +8,42 @@ function Images() {
       source: "/images/img1.jpg",
       name: "Anil Bhandari",
       wName: "Facebook",
-      logo: <EllipsisVertical size={15} />,
+      logo: "/facebook.png",
     },
     {
       id: 2,
-      source: "/images/img1.jpg",
-      name: "Anil Bhandari",
-      wName: "Facebook",
-      logo: <EllipsisVertical size={15} />,
+      source: "/images/img2.JPG",
+      name: "Recieving scholarship",
+      wName: "Scholarship",
+      logo: "/scholar.png",
     },
     {
       id: 3,
-      source: "/images/img1.jpg",
-      name: "Anil Bhandari",
-      wName: "Facebook",
-      logo: <EllipsisVertical size={15} />,
+      source: "/images/img3.JPG",
+      name: "With my mother",
+      wName: "Mother",
+      logo: "/mother.png",
     },
     {
       id: 4,
-      source: "/images/img1.jpg",
-      name: "Anil Bhandari",
-      wName: "Facebook",
-      logo: <EllipsisVertical size={15} />,
+      source: "/images/img4.jpeg",
+      name: "Wininng Hackathon",
+      wName: "Hackathon",
+      logo: "/award.png",
     },
     {
       id: 5,
-      source: "/images/img1.jpg",
-      name: "Anil Bhandari",
-      wName: "Facebook",
-      logo: <EllipsisVertical size={15} />,
+      source: "/images/img5.jpeg",
+      name: "Giving presentation",
+      wName: "Presentation",
+      logo: "/speech.png",
     },
     {
       id: 6,
-      source: "/images/img1.jpg",
-      name: "Anil Bhandari",
-      wName: "Facebook",
-      logo: <EllipsisVertical size={15} />,
+      source: "/images/img6.jpeg",
+      name: "IoT project",
+      wName: "IoT",
+      logo: "/iot.png",
     },
   ];
 
@@ -56,17 +56,21 @@ function Images() {
         </div>
         <div className="grid grid-cols-3 gap-5 my-4">
           {imageData?.map((image) => (
-            <div className="flex flex-col gap-y-1">
+            <div className="flex flex-col gap-y-1 cursor-pointer">
               <img
                 key={image.id}
                 src={image.source}
                 alt="image"
-                className="w-[100%]  rounded-2xl"
+                className="w-[100%] h-[100%] object-cover rounded-2xl"
               />
               <span className="text-sm">{image.name}</span>
               <div className="flex items-center justify-between">
                 <div className="flex gap-x-2">
-                  {image.logo}
+                  <img
+                    src={image.logo}
+                    alt="logo"
+                    className="w-4 h-4 rounded-full"
+                  />
                   <span className="text-xs">{image.wName}</span>
                 </div>
                 <EllipsisVertical size={15} />
