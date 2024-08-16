@@ -1,6 +1,7 @@
 import { EllipsisVertical } from "lucide-react";
 import React from "react";
 import GoogleStyle from "./GoogleStyle";
+import Image from "next/image";
 import Numbering from "./Numbering";
 // https://www.linkedin.com/in/anilbhandari24/
 
@@ -73,9 +74,12 @@ function Results() {
             <div className="flex gap-x-3">
               {/* image  */}
               <div className="w-10 h-10 border-gray-300 flex items-center justify-center border rounded-full">
-                <img
-                  className="w-8 h-8 rounded-full"
+                <Image
+                  width={30}
+                  height={30}
+                  className="rounded-full"
                   src={result.photo}
+                  quality={100}
                   alt="profile"
                 />
               </div>

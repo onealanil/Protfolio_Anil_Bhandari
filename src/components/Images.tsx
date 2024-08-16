@@ -1,4 +1,5 @@
 import { ArrowRight, EllipsisVertical } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 function Images() {
@@ -57,18 +58,24 @@ function Images() {
         <div className="grid grid-cols-3 gap-5 my-4">
           {imageData?.map((image) => (
             <div className="flex flex-col gap-y-1 cursor-pointer">
-              <img
-                key={image.id}
-                src={image.source}
-                alt="image"
-                className="w-[100%] h-[100%] object-cover rounded-2xl"
-              />
+                <div className="relative w-full aspect-square">
+                <Image
+                  src={image.source}
+                  alt={image.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority
+                  className="object-cover rounded-2xl"
+                />
+              </div>
               <span className="text-sm">{image.name}</span>
               <div className="flex items-center justify-between">
                 <div className="flex gap-x-2">
-                  <img
+                  <Image
                     src={image.logo}
                     alt="logo"
+                    width={15}
+                    height={15}
                     className="w-4 h-4 rounded-full"
                   />
                   <span className="text-xs">{image.wName}</span>
