@@ -1,5 +1,7 @@
 import { EllipsisVertical } from "lucide-react";
 import React from "react";
+import GoogleStyle from "./GoogleStyle";
+import Numbering from "./Numbering";
 // https://www.linkedin.com/in/anilbhandari24/
 
 function Results() {
@@ -82,7 +84,7 @@ function Results() {
                 <span className="text-sm">{result.name}</span>
                 <span className="text-xs text-gray-600">{result.link}</span>
               </div>
-              <EllipsisVertical size={15} />,
+              <EllipsisVertical size={15} />
             </div>
             <div className="flex flex-col">
               <span className="text-blue-800 text-[1.25rem] font-medium">
@@ -92,6 +94,10 @@ function Results() {
             </div>
           </div>
         ))}
+      </div>
+      <div className="w-full flex items-center gap-y-2 justify-center py-7 flex-col mb-10">
+      <GoogleStyle/>
+      <Numbering/>
       </div>
     </React.Fragment>
   );
