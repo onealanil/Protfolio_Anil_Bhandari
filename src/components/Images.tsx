@@ -68,7 +68,7 @@ function Images() {
                   className="object-cover rounded-2xl"
                 />
               </div>
-              <span className="text-sm">{image.name}</span>
+              <span className="text-xs lg:text-sm">{image.name}</span>
               <div className="flex items-center justify-between">
                 <div className="flex gap-x-2">
                   <Image

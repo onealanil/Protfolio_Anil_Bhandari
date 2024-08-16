@@ -24,7 +24,7 @@ function TabBar() {
           }
         `}
       </style>
-      <section className="mt-40 lg:mt-24 flex justify-center lg:justify-normal">
+      <section className="lg:mt-24 flex justify-center lg:justify-normal">
         <div className="lg:w-full w-[90%] flex border-b-[0.25px] overflow-x-scroll border-gray-300 hide-scrollbar">
           <div className="lg:w-[13%] w-[0%]"></div>
           {tabs.map((tab) => (
