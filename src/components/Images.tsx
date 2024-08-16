@@ -57,7 +57,7 @@ function Images() {
         </div>
         <div className="grid grid-cols-3 gap-5 my-4">
           {imageData?.map((image) => (
-            <div className="flex flex-col gap-y-1 cursor-pointer">
+            <div key={image.id} className="flex flex-col gap-y-1 cursor-pointer">
                 <div className="relative w-full aspect-square">
                 <Image
                   src={image.source}

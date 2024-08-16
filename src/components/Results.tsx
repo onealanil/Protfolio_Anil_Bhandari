@@ -69,7 +69,7 @@ function Results() {
     <React.Fragment>
       <div>
         {resultsData?.map((result) => (
-          <div className="flex flex-col gap-y-1 my-9">
+          <div className="flex flex-col gap-y-1 my-9" key={result.id}>
             {/* top */}
             <div className="flex gap-x-3">
               {/* image  */}
