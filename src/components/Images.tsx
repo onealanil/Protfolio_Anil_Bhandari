@@ -87,7 +87,7 @@ function Images() {
           <div className="col-span-3 my-4 flex items-center justify-center">
             <div className="w-full flex items-center">
               <div className="flex-grow h-px bg-gray-300"></div>
-              <button className="gap-x-2 flex mx-4 px-28 py-2 bg-gray-100 text-sm text-black rounded-full hover:bg-gray-300 transition-colors">
+              <button className="gap-x-2 flex mx-4 px-14 lg:px-28 py-2 bg-gray-100  text-sm text-black rounded-full hover:bg-gray-300 transition-colors">
                 All images
                 <ArrowRight />
               </button>
