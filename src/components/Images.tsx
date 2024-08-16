@@ -51,48 +51,50 @@ function Images() {
   return (
     <React.Fragment>
       <div className="mt-7">
-        <div className="flex items-center  gap-x-4">
+        <div className="flex items-center gap-x-4">
           <span className="text-[1.25rem]">Images</span>
           <EllipsisVertical size={15} />
         </div>
-        <div className="grid grid-cols-3 gap-5 my-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 my-4">
           {imageData?.map((image) => (
             <div key={image.id} className="flex flex-col gap-y-1 cursor-pointer">
-                <div className="relative w-full aspect-square">
+              <div className="relative w-full aspect-square">
                 <Image
                   src={image.source}
                   alt={image.name}
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                   priority
                   className="object-cover rounded-2xl"
                 />
               </div>
               <span className="text-xs lg:text-sm">{image.name}</span>
               <div className="flex items-center justify-between">
-                <div className="flex gap-x-2">
-                  <Image
-                    src={image.logo}
-                    alt="logo"
-                    width={15}
-                    height={15}
-                    className="w-4 h-4 rounded-full"
-                  />
+                <div className="flex gap-x-2 items-center">
+                  <div className="relative w-4 h-4">
+                    <Image
+                      src={image.logo}
+                      alt={`${image.wName} logo`}
+                      fill
+                      sizes="16px"
+                      className="rounded-full"
+                    />
+                  </div>
                   <span className="text-xs">{image.wName}</span>
                 </div>
                 <EllipsisVertical size={15} />
               </div>
             </div>
           ))}
-          <div className="col-span-3 my-4 flex items-center justify-center">
-            <div className="w-full flex items-center">
-              <div className="flex-grow h-px bg-gray-300"></div>
-              <button className="gap-x-2 flex mx-4 px-14 lg:px-28 py-2 bg-gray-100  text-sm text-black rounded-full hover:bg-gray-300 transition-colors">
-                All images
-                <ArrowRight />
-              </button>
-              <div className="flex-grow h-px bg-gray-300"></div>
-            </div>
+        </div>
+        <div className="my-4 flex items-center justify-center">
+          <div className="w-full flex items-center">
+            <div className="flex-grow h-px bg-gray-300"></div>
+            <button className="gap-x-2 flex mx-4 px-14 lg:px-28 py-2 bg-gray-100 text-sm text-black rounded-full hover:bg-gray-300 transition-colors">
+              All images
+              <ArrowRight />
+            </button>
+            <div className="flex-grow h-px bg-gray-300"></div>
           </div>
         </div>
       </div>
