@@ -19,9 +19,12 @@ export interface IimageData {
   logo: string;
 }
 
+export const tabs = ["All", "Images", "Skills", "Experiences", "Education", "Projects"];
+
 export default function Home() {
   const [imageData, setImageData] = React.useState<IimageData[]>([]);
   const [viewSingleImage, setViewSingleImage] = React.useState<boolean>(false);
+  const [activeTab, setActiveTab] = React.useState("All");
 
   return (
     <main className="min-h-screen items-center bg-white">
@@ -31,18 +34,38 @@ export default function Home() {
       <div className="lg:hidden block">
         <MobHeader />
       </div>
-      <TabBar />
+      <TabBar activeTab={activeTab} setActiveTab={setActiveTab} />
       <div className="w-full flex justify-center lg:justify-normal">
         {/* gap */}
         <div className="w-[13%] hidden lg:block"></div>
         <div className="w-[90%] lg:w-[35%]">
-          <Suggestion />
-          <Images setViewSingleImage={setViewSingleImage} setImageData={setImageData} />
-          <Results />
+          {activeTab === "Images" ? (
+            <Images
+              activeTab={activeTab}
+              setViewSingleImage={setViewSingleImage}
+              setImageData={setImageData}
+            />
+          ) : (
+            <>
+              <Suggestion />
+              <Images
+                setViewSingleImage={setViewSingleImage}
+                setImageData={setImageData}
+              />
+              <Results />
+            </>
+          )}
         </div>
-        <div className="lg:ml-8 lg:mt-9">{viewSingleImage && imageData && <SingleImage imageData={imageData} setViewSingleImage={setViewSingleImage} />}</div>
+        <div className="lg:ml-8 lg:mt-9">
+          {viewSingleImage && imageData && (
+            <SingleImage
+              imageData={imageData}
+              setViewSingleImage={setViewSingleImage}
+            />
+          )}
+        </div>
       </div>
-      <Footer />
+      <Footer activeTab={activeTab}/>
     </main>
   );
 }

@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { EllipsisVertical } from "lucide-react";
+import { tabs } from "@/app/page";
 
-const tabs = ["All", "Images", "Videos", "News", "Maps", "Books", "Web"];
-
-function TabBar() {
-  const [activeTab, setActiveTab] = useState("All");
-
+function TabBar({ activeTab, setActiveTab }: any) {
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
   };

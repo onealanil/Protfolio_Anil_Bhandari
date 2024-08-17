@@ -17,7 +17,7 @@ const SearchBar = () => {
     >
       <input
         type="text"
-        value={searchTerm}
+        value={"Anil Bhandari"}
         onChange={(e) => setSearchTerm(e.target.value)}
         className="flex-grow w-[10rem] lg:w-[40rem] text-base text-gray-700 focus:outline-none"
         placeholder="Search Google or type a URL"
@@ -25,7 +25,6 @@ const SearchBar = () => {
       {searchTerm && (
         <button
           type="button"
-          onClick={() => setSearchTerm("")}
           className="p-1 mr-2"
         >
           <X className="h-6 w-6 text-gray-600" />

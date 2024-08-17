@@ -3,9 +3,12 @@ import React from "react";
 import GoogleStyle from "./GoogleStyle";
 import Image from "next/image";
 import Numbering from "./Numbering";
-// https://www.linkedin.com/in/anilbhandari24/
+import SingleComp from "./SingleComp";
 
 function Results() {
+  const [openComp, setOpenComp] = React.useState<Boolean>(false);
+  const [singleData, setSingleData] = React.useState(null);
+
   const resultsData = [
     {
       id: 1,
@@ -19,7 +22,7 @@ function Results() {
       id: 2,
       photo: "/github.png",
       name: "GitHub",
-      link: "https://github.com > onealanil",
+      link: "https://github.com/onealanil",
       title: "Anil Bhandari onealanil",
       body: "NepalKamma is an Android app designed to address the unemployment issue in Nepal by connecting job seekers with short-term or gig-based employment opportunities",
     },
@@ -65,11 +68,16 @@ function Results() {
     },
   ];
 
+  function handleClick(result:any){
+    setSingleData(result);
+    setOpenComp(true);
+  }
+
   return (
     <React.Fragment>
       <div>
         {resultsData?.map((result) => (
-          <div className="flex flex-col gap-y-1 my-9" key={result.id}>
+          <div className="flex flex-col gap-y-1 my-9 cursor-pointer" key={result.id} onClick={()=> handleClick(result)}>
             {/* top */}
             <div className="flex gap-x-3">
               {/* image  */}
@@ -103,6 +111,11 @@ function Results() {
       <GoogleStyle/>
       <Numbering/>
       </div>
+      {openComp && singleData && (
+        <div className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex items-center justify-center">
+          <SingleComp singleData={singleData} onClose={() => setOpenComp(false)} />
+        </div>
+      )}
     </React.Fragment>
   );
 }
