@@ -2,7 +2,7 @@ import { ArrowRight, EllipsisVertical } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
-function Images() {
+function Images({ setViewSingleImage, setImageData }: any) {
   const imageData = [
     {
       id: 1,
@@ -48,6 +48,11 @@ function Images() {
     },
   ];
 
+  function handleImageClicked(image: any) {
+    setViewSingleImage(true);
+    setImageData(image);
+  }
+
   return (
     <React.Fragment>
       <div className="mt-7">
@@ -57,7 +62,11 @@ function Images() {
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 my-4">
           {imageData?.map((image) => (
-            <div key={image.id} className="flex flex-col gap-y-1 cursor-pointer">
+            <div
+              key={image.id}
+              className="flex flex-col gap-y-1 cursor-pointer"
+              onClick={() => handleImageClicked(image)}
+            >
               <div className="relative w-full aspect-square">
                 <Image
                   src={image.source}
