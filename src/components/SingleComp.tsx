@@ -1,9 +1,11 @@
 import React from "react";
-import {
-  X,
-  MoreVertical,
-} from "lucide-react";
+import { X, MoreVertical } from "lucide-react";
 import Image from "next/image";
+import Project from "./Project";
+import Experience from "./Experience";
+import Collage from "./Collage";
+import Skills from "./Skills";
+import CV from "./CV";
 
 const SingleComp = ({ onClose, singleData }: any) => {
   const openInNewTab = (url: string) => {
@@ -64,6 +66,12 @@ const SingleComp = ({ onClose, singleData }: any) => {
           </span>
         </div>
       )}
+      {singleData?.name === "Projects" && <Project />}
+      {singleData?.name === "Experience" && <Experience />}
+      {singleData?.name ===
+        "Itahari International  Collage - Anil Bhandari" && <Collage />}
+      {singleData?.name === "Anil Bhandari - Skills" && <Skills />}
+      {singleData?.name === "Anil Bhandari" && <CV />}
     </div>
   );
 };

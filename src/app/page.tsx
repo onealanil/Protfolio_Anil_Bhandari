@@ -10,6 +10,7 @@ import Results from "@/components/Results";
 import Footer from "@/components/Footer";
 import MobHeader from "@/components/MobHeader";
 import SingleImage from "@/components/SingleImage";
+import { tabs } from "@/components/Tabs";
 
 export interface IimageData {
   id: number;
@@ -19,7 +20,6 @@ export interface IimageData {
   logo: string;
 }
 
-export const tabs = ["All", "Images", "Skills", "Experiences", "Education", "Projects"];
 
 export default function Home() {
   const [imageData, setImageData] = React.useState<IimageData[]>([]);

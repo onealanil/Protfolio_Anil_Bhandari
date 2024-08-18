@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { EllipsisVertical } from "lucide-react";
-import { tabs } from "@/app/page";
+import { tabs } from "./Tabs";
 
 function TabBar({ activeTab, setActiveTab }: any) {
   const handleTabClick = (tab: string) => {
