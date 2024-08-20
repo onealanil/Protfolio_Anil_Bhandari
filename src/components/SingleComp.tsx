@@ -13,7 +13,7 @@ const SingleComp = ({ onClose, singleData }: any) => {
   };
 
   return (
-    <div className="lg:max-w-lg lg:mx-auto w-[90%] bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="lg:max-w-lg lg:mx-auto w-[90%] h-[30rem] lg:h-[40rem] overflow-y-scroll bg-white shadow-lg rounded-lg overflow-hidden">
       <div className="flex items-center justify-between p-4 bg-gray-100">
         <div className="flex items-center space-x-4">
           <Image
