@@ -16,7 +16,7 @@ const experiences: ExperienceItem[] = [
     period: "2023 - Present",
     position: "Freelancer (Full Stack Developer)",
     responsibilities: [
-      "Designed and developed custom websites, andriod app using React.js, creating modern and responsive designs.",
+      "Designed and developed custom websites, andriod app using React.js, React native, creating modern and responsive designs.",
       "Assisted other developers in completing their projects, providing expertise in both frontend and backend development.",
     ],
   },
@@ -79,7 +79,7 @@ const ExperienceCard: React.FC<{ experience: ExperienceItem }> = ({
 
 const Experience: React.FC = () => {
   return (
-    <div className="container mx-auto px-4 py-8 h-[40rem] overflow-y-scroll">
+    <div className="container mx-auto px-4 py-8 h-[30rem] lg:h-[40rem] overflow-y-scroll">
       <h2 className="text-3xl font-bold mb-8 text-center flex items-center justify-center text-gray-800">
         <Briefcase size={32} className="mr-2 text-blue-600" />
         Work Experience
