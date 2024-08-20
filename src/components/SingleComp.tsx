@@ -13,7 +13,8 @@ const SingleComp = ({ onClose, singleData }: any) => {
   };
 
   return (
-    <div className="lg:max-w-lg lg:mx-auto w-[90%] h-[30rem] lg:h-[40rem] overflow-y-scroll bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="lg:max-w-lg lg:mx-auto w-[90%] h-[30rem] lg:h-[40rem] bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
+      {/* Header */}
       <div className="flex items-center justify-between p-4 bg-gray-100">
         <div className="flex items-center space-x-4">
           <Image
@@ -37,41 +38,45 @@ const SingleComp = ({ onClose, singleData }: any) => {
           </button>
         </div>
       </div>
-      {(singleData?.name === "LinkedIn - Anil Bhandari" ||
-        singleData?.name === "GitHub") && (
-        <div
-          className="p-5"
-          role="link"
-          onClick={() =>
-            openInNewTab(
-              `${
-                singleData?.name !== "GitHub"
-                  ? "https://www.linkedin.com/in/anilbhandari24/"
-                  : singleData?.link
-              }`
-            )
-          }
-        >
-          <span className="flex items-center justify-center bg-gray-200 cursor-pointer hover:bg-gray-300 rounded-full p-3">
-            {singleData?.name === "GitHub"
-              ? "Open in Github"
-              : "Open in LinkedIn"}
-            <Image
-              src={singleData?.photo}
-              alt="IoT Logo"
-              width={40}
-              height={40}
-              className="rounded-full px-1 py-1"
-            />
-          </span>
-        </div>
-      )}
-      {singleData?.name === "Projects" && <Project />}
-      {singleData?.name === "Experience" && <Experience />}
-      {singleData?.name ===
-        "Itahari International Collage - Anil Bhandari" && <Collage />}
-      {singleData?.name === "Anil Bhandari - Skills" && <Skills />}
-      {singleData?.name === "Anil Bhandari" && <CV />}
+
+      {/* Scrollable Content */}
+      <div className="flex-grow overflow-y-auto p-5">
+        {(singleData?.name === "LinkedIn - Anil Bhandari" ||
+          singleData?.name === "GitHub") && (
+          <div
+            className="mb-5"
+            role="link"
+            onClick={() =>
+              openInNewTab(
+                `${
+                  singleData?.name !== "GitHub"
+                    ? "https://www.linkedin.com/in/anilbhandari24/"
+                    : singleData?.link
+                }`
+              )
+            }
+          >
+            <span className="flex items-center justify-center bg-gray-200 cursor-pointer hover:bg-gray-300 rounded-full p-3">
+              {singleData?.name === "GitHub"
+                ? "Open in Github"
+                : "Open in LinkedIn"}
+              <Image
+                src={singleData?.photo}
+                alt="IoT Logo"
+                width={40}
+                height={40}
+                className="rounded-full px-1 py-1"
+              />
+            </span>
+          </div>
+        )}
+        {singleData?.name === "Projects" && <Project />}
+        {singleData?.name === "Experience" && <Experience />}
+        {singleData?.name ===
+          "Itahari International Collage - Anil Bhandari" && <Collage />}
+        {singleData?.name === "Anil Bhandari - Skills" && <Skills />}
+        {singleData?.name === "Anil Bhandari" && <CV />}
+      </div>
     </div>
   );
 };

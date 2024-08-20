@@ -58,12 +58,12 @@ const Collage: React.FC = () => {
       degree: "Bachelor's",
       faculty: "BSc(Hons) Computing",
       link: "https://iic.edu.np/",
-      status: "Currently Studying"
+      status: "Studying"
     }
   ];
 
   return (
-    <div className="container mx-auto px-4 py-6 sm:py-8">
+    <div className="container mx-auto px-4 py-6 sm:py-8 overflow-y-scroll h-full">
       <h2 className="text-xl lg:text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center flex items-center justify-center">
         <GraduationCap size={24} className="mr-2 sm:mr-3" />
         My Education Journey
