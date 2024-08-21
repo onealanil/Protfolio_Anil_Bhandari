@@ -4,12 +4,23 @@ import GoogleStyle from "./GoogleStyle";
 import Image from "next/image";
 import Numbering from "./Numbering";
 import SingleComp from "./SingleComp";
+import CV from "./CV";
+
+interface ResultData {
+  id: number;
+  photo: string;
+  name: string;
+  link: string;
+  title: string;
+  body: string;
+}
 
 function Results() {
   const [openComp, setOpenComp] = React.useState<Boolean>(false);
-  const [singleData, setSingleData] = React.useState(null);
+  const [singleData, setSingleData] = React.useState<ResultData | null>(null);
+  const [showModal, setShowModal] = React.useState<Boolean>(false);
 
-  const resultsData = [
+  const resultsData: ResultData[] = [
     {
       id: 1,
       photo: "/linkedin.png",
@@ -68,16 +79,21 @@ function Results() {
     },
   ];
 
-  function handleClick(result:any){
+  function handleClick(result: any) {
     setSingleData(result);
     setOpenComp(true);
+    setShowModal(true);
   }
 
   return (
     <React.Fragment>
       <div>
         {resultsData?.map((result) => (
-          <div className="flex flex-col gap-y-1 my-9 cursor-pointer" key={result.id} onClick={()=> handleClick(result)}>
+          <div
+            className="flex flex-col gap-y-1 my-9 cursor-pointer"
+            key={result.id}
+            onClick={() => handleClick(result)}
+          >
             {/* top */}
             <div className="flex gap-x-3">
               {/* image  */}
@@ -108,12 +124,20 @@ function Results() {
         ))}
       </div>
       <div className="w-full flex items-center gap-y-2 justify-center py-7 flex-col mb-10">
-      <GoogleStyle/>
-      <Numbering/>
+        <GoogleStyle />
+        <Numbering />
       </div>
-      {openComp && singleData && (
+
+      {showModal && singleData?.name === "Anil Bhandari" && (
+        <CV setShowModal={setShowModal} />
+      )}
+
+      {openComp && singleData && singleData?.name !== "Anil Bhandari" && (
         <div className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex items-center justify-center">
-          <SingleComp singleData={singleData} onClose={() => setOpenComp(false)} />
+          <SingleComp
+            singleData={singleData}
+            onClose={() => setOpenComp(false)}
+          />
         </div>
       )}
     </React.Fragment>

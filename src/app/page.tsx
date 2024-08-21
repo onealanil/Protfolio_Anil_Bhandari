@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Header from "../components/Header";
 import TabBar from "@/components/TabBar";
 import Suggestion from "@/components/Suggestion";
@@ -10,7 +9,6 @@ import Results from "@/components/Results";
 import Footer from "@/components/Footer";
 import MobHeader from "@/components/MobHeader";
 import SingleImage from "@/components/SingleImage";
-import { tabs } from "@/components/Tabs";
 
 export interface IimageData {
   id: number;

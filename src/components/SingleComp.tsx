@@ -82,7 +82,7 @@ const SingleComp = ({ onClose, singleData }: any) => {
         {singleData?.name ===
           "Itahari International Collage - Anil Bhandari" && <Collage />}
         {singleData?.name === "Anil Bhandari - Skills" && <Skills />}
-        {singleData?.name === "Anil Bhandari" && <CV />}
+        {/* {singleData?.name === "Anil Bhandari" && <CV />} */}
       </div>
     </div>
   );
