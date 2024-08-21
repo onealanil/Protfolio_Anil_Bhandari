@@ -13,7 +13,14 @@ const SingleComp = ({ onClose, singleData }: any) => {
   };
 
   return (
-    <div className="lg:max-w-lg lg:mx-auto w-[90%] h-[30rem] lg:h-[40rem] bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
+    <div
+      className={`${
+        singleData?.name === "GitHub" ||
+        singleData?.name === "LinkedIn - Anil Bhandari"
+          ? "h-auto max-h-[90vh] lg:max-h-[80vh]"
+          : "h-[30rem] lg:h-[40rem]"
+      } lg:max-w-lg lg:mx-auto w-[90%] bg-white shadow-lg rounded-lg overflow-hidden flex flex-col`}
+    >
       {/* Header */}
       <div className="flex items-center justify-between p-4 bg-gray-100">
         <div className="flex items-center space-x-4">

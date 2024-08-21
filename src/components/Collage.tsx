@@ -68,7 +68,7 @@ const Collage: React.FC = () => {
         <GraduationCap size={24} className="mr-2 sm:mr-3" />
         My Education Journey
       </h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 sm:gap-6">
         {education_data.map((item) => (
           <EducationCard key={item.id} item={item} />
         ))}

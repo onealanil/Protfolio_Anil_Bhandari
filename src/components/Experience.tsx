@@ -21,17 +21,6 @@ const experiences: ExperienceItem[] = [
     ],
   },
   {
-    company: "PL Multimedia Services Pvt.Ltd",
-    location: "Chitwan -(Remote)",
-    period: "June 2023 - Sep 2023",
-    position: "Backend Developer Intern",
-    responsibilities: [
-      "Led backend development, focusing on creating secure APIs and strong security protocols.",
-      "Worked with frontend developers to use Redux Toolkit for better data flow and state management.",
-      "Utilized Express.js, Node.js, MongoDB, Redux Toolkit, and React.js to create full-stack solutions.",
-    ],
-  },
-  {
     company: "Spiral Tech",
     location: "Itahari",
     period: "Nov 2023 - Jan 2024",
@@ -40,6 +29,17 @@ const experiences: ExperienceItem[] = [
       "Built user-friendly frontend components to improve user experience.",
       "Developed backend systems using Node.js and Express.js to boost server performance.",
       "Used React.js, Express.js, TailwindCSS, and Zustand to create efficient web applications.",
+    ],
+  },
+  {
+    company: "PL Multimedia Services Pvt.Ltd",
+    location: "Chitwan -(Remote)",
+    period: "June 2023 - Sep 2023",
+    position: "Backend Developer Intern",
+    responsibilities: [
+      "Led backend development, focusing on creating secure APIs and strong security protocols.",
+      "Worked with frontend developers to use Redux Toolkit for better data flow and state management.",
+      "Utilized Express.js, Node.js, MongoDB, Redux Toolkit, and React.js to create full-stack solutions.",
     ],
   },
 ];

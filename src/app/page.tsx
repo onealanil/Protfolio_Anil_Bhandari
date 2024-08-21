@@ -55,6 +55,7 @@ export default function Home() {
               <Results />
             </>
           )}
+          
         </div>
         <div className="lg:ml-8 lg:mt-9">
           {viewSingleImage && imageData && (
