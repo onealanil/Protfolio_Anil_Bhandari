@@ -25,8 +25,8 @@ function CV({setShowModal}: any) {
             </p>
             <div className="items-center gap-2 mt-3 sm:flex">
               <a
-                href="./assets/AnilBhandari_CV.pdf"
-                download="AnilBhandariCV.pdf"
+                href="./assets/CV_AnilBhandari.pdf"
+                download="CV_AnilBhandari.pdf"
               >
                 <button
                   className="w-full mt-2 p-2.5 flex-1 text-white bg-green-700 rounded-md outline-none ring-offset-2 ring-green-400 focus:ring-2"
