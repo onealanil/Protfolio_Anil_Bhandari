@@ -38,6 +38,14 @@ function Results() {
       body: "NepalKamma is an Android app designed to address the unemployment issue in Nepal by connecting job seekers with short-term or gig-based employment opportunities",
     },
     {
+      id: 7,
+      photo: "/projects.png",
+      name: "Projects",
+      link: "https://www.projects.com/in/anilbhandari/",
+      title: "Anil Bhandari - Projects",
+      body: "I have worked on a number of projects in software development. Check out my projects and see how I can help you with your next project.",
+    },
+    {
       id: 3,
       photo: "/research.png",
       name: "Anil Bhandari",
@@ -68,14 +76,6 @@ function Results() {
       link: "https://www.experience.com/software/anilbhandari/",
       title: "View Anil Bhandari's Experience",
       body: "I have worked as a software engineer for over 3 years. I have experience in web development, mobile app development, and more. Check out my experience and see how I can help you with your next project.",
-    },
-    {
-      id: 7,
-      photo: "/projects.png",
-      name: "Projects",
-      link: "https://www.projects.com/in/anilbhandari/",
-      title: "Anil Bhandari - Projects",
-      body: "I have worked on a number of projects in software development. Check out my projects and see how I can help you with your next project.",
     },
   ];
 
