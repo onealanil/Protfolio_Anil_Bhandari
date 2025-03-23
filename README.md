@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Anil Bhandari - Personal Portfolio
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-13.0%2B-blue?logo=next.js)
+![React](https://img.shields.io/badge/React-18.0%2B-blue?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0%2B-blue?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0%2B-blue?logo=tailwind-css)
 
-First, run the development server:
+Welcome to my personal portfolio built with **Next.js**, **React**, and **Tailwind CSS**. This project showcases my skills, projects, and experience as a Full Stack Developer.
+
+---
+
+## 🚀 Getting Started
+
+To run this project locally, follow these steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/onealanil/Protfolio_Anil_Bhandari.git
+   cd your-repo-name
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
+
+4. **Open your browser:**
+   Visit [http://localhost:3000](http://localhost:3000) to view the project.
+
+---
+
+## 🛠️ Technologies Used
+
+- **Next.js** - A React framework for server-rendered applications.
+- **React** - A JavaScript library for building user interfaces.
+- **TypeScript** - A typed superset of JavaScript for better developer experience.
+- **Tailwind CSS** - A utility-first CSS framework for rapid UI development.
+- **Vercel** - For seamless deployment and hosting.
+
+---
+
+## 📂 Project Structure
+
+Here’s an overview of the project structure:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Protfolio_Anil_Bhandari/
+├── app/
+│   ├── page.tsx          # Main page component
+│   ├── layout.tsx        # Root layout component
+│   └── globals.css       # Global styles
+├── components/           # Reusable components
+├── public/               # Static assets (images, fonts, etc.)
+├── package.json          # Project dependencies
+└── README.md             # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Responsive Design**: Built with Tailwind CSS for a mobile-first approach.
+- **SEO Optimization**: Includes meta tags, Open Graph, and structured data for better search engine visibility.
+- **Dynamic Routing**: Leverages Next.js dynamic routing for scalable page creation.
+- **Performance**: Optimized for fast load times with Next.js features like `next/image`.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is deployed on **Vercel**. You can visit the live site here:
+👉 [https://www.anilbhandari.com.np/]
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To deploy your own version:
 
-## Deploy on Vercel
+1. Fork this repository.
+2. Connect your GitHub account to Vercel.
+3. Import this repository and deploy it.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 📚 Learn More
+
+To learn more about the technologies used in this project, check out the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API.
+- [React Documentation](https://reactjs.org/docs) - Learn about React.
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - Learn about Tailwind CSS.
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/) - Learn about TypeScript.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! If you find any issues or want to suggest improvements, feel free to open an issue or submit a pull request.
+
+1. **Fork** the repository.
+2. **Create a new branch** (`git checkout -b feature/YourFeatureName`).
+3. **Commit your changes** (`git commit -m 'Add some feature'`).
+4. **Push to the branch** (`git push origin feature/YourFeatureName`).
+5. **Open a pull request**.
+
+---
+## 🙏 Acknowledgments
+
+- Thanks to **Vercel** for providing an amazing platform to deploy Next.js apps.
+- Thanks to the creators of **Tailwind CSS** for making styling so much easier.
+
+---
+
+### Made with ❤️ by **Anil Bhandari**
