@@ -1,8 +1,13 @@
+import Head from 'next/head'
 import React from 'react'
 
 function page() {
   return (
-    <div>page</div>
+    <>
+    <Head>
+    <link rel="canonical" href="https://www.anilbhandari.com.np/" />
+    </Head>
+    </>
   )
 }
 

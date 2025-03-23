@@ -7,6 +7,7 @@ function Images({ setViewSingleImage, setImageData, activeTab }: any) {
     {
       id: 1,
       source: "/images/img1.jpg",
+      alt: "Anil Bhandari - Software Engineer",
       name: "Anil Bhandari",
       wName: "Facebook",
       logo: "/facebook.png",
@@ -14,6 +15,7 @@ function Images({ setViewSingleImage, setImageData, activeTab }: any) {
     {
       id: 2,
       source: "/images/img2.JPG",
+      alt: "Anil Bhandari - Software Engineer",
       name: "Recieving scholarship",
       wName: "Scholarship",
       logo: "/scholar.png",
@@ -21,6 +23,7 @@ function Images({ setViewSingleImage, setImageData, activeTab }: any) {
     {
       id: 3,
       source: "/images/img3.JPG",
+      alt: "Anil Bhandari - Software Engineer",
       name: "With my mother",
       wName: "Mother",
       logo: "/mother.png",
@@ -28,6 +31,7 @@ function Images({ setViewSingleImage, setImageData, activeTab }: any) {
     {
       id: 4,
       source: "/images/img4.jpeg",
+      alt: "Anil Bhandari - Software Engineer",
       name: "Wininng Hackathon",
       wName: "Hackathon",
       logo: "/award.png",
@@ -35,6 +39,7 @@ function Images({ setViewSingleImage, setImageData, activeTab }: any) {
     {
       id: 5,
       source: "/images/img5.jpeg",
+      alt: "Anil Bhandari - Software Engineer",
       name: "Giving presentation",
       wName: "Presentation",
       logo: "/speech.png",
@@ -42,6 +47,7 @@ function Images({ setViewSingleImage, setImageData, activeTab }: any) {
     {
       id: 6,
       source: "/images/img6.jpeg",
+      alt: "Anil Bhandari - Software Engineer",
       name: "IoT project",
       wName: "IoT",
       logo: "/iot.png",
@@ -70,7 +76,7 @@ function Images({ setViewSingleImage, setImageData, activeTab }: any) {
               <div className="relative w-full aspect-square">
                 <Image
                   src={image.source}
-                  alt={image.name}
+                  alt={image.alt}
                   fill
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                   priority
