@@ -41,7 +41,7 @@ const projects: Project[] = [
     description: "A web app for lyricists, poets, and mental health support. Features real-time communication with SocketIO.",
     technologies: ["React.js", "Node.js", "MongoDB", "SocketIO"],
     icon: <MessageCircle className="w-6 h-6 text-green-600" />,
-    embbed: <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7072859074324787200" height="1067" width="404"  title="Embedded post"></iframe>,
+    embbed: <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7072859074324787200" height="1100" width="650"  title="Embedded post"></iframe>,
     code: "https://github.com/onealanil/emotionaloutlets",
   },
   {
@@ -51,7 +51,7 @@ const projects: Project[] = [
     description: "An automated messaging system for Facebook Messenger using AI. Developed a chatbot with ChatterBot.",
     technologies: ["Python", "Selenium", "ChatterBot", "Tkinter"],
     icon: <MessageCircle className="w-6 h-6 text-red-600" />,
-    embbed: <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7101211578192076800" height="836" width="404"  title="Embedded post"></iframe>,
+    embbed: <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7101211578192076800" height="836" width="650"  title="Embedded post"></iframe>,
     code: "https://github.com/onealanil/Facebook_messenger_automation"
   },
 ];
@@ -99,7 +99,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
 const ProjectsShowcase: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h4 className='font-semibold'>Some of my Projects:</h4>
+      {/* <h4 className='font-semibold'>Some of my Projects:</h4> */}
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
