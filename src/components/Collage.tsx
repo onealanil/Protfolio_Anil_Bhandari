@@ -1,5 +1,5 @@
-import React from 'react';
-import { GraduationCap, MapPin, ExternalLink } from 'lucide-react';
+import React from "react";
+import { GraduationCap, MapPin, ExternalLink } from "lucide-react";
 
 interface EducationItem {
   id: number;
@@ -22,9 +22,13 @@ const EducationCard: React.FC<{ item: EducationItem }> = ({ item }) => (
       <span className="font-medium">{item.degree}</span> - {item.faculty}
     </div>
     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-3 sm:mt-4">
-      <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm mb-2 sm:mb-0 ${
-        item.status === 'Completed' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
-      }`}>
+      <span
+        className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm mb-2 sm:mb-0 ${
+          item.status === "Completed"
+            ? "bg-green-100 text-green-800"
+            : "bg-blue-100 text-blue-800"
+        }`}
+      >
         {item.status}
       </span>
       <a
@@ -40,7 +44,7 @@ const EducationCard: React.FC<{ item: EducationItem }> = ({ item }) => (
   </div>
 );
 
-const Collage: React.FC = () => {
+const Collage = ({ setFromTab }: any) => {
   const education_data: EducationItem[] = [
     {
       id: 1,
@@ -49,7 +53,7 @@ const Collage: React.FC = () => {
       degree: "SLC or +2",
       faculty: "Science",
       link: "https://www.facebook.com/brightfuture2048/",
-      status: "Completed"
+      status: "Completed",
     },
     {
       id: 2,
@@ -58,16 +62,21 @@ const Collage: React.FC = () => {
       degree: "Bachelor's",
       faculty: "BSc(Hons) Computing",
       link: "https://iic.edu.np/",
-      status: "Studying"
-    }
+      status: "Completed",
+    },
   ];
 
   return (
     <div className="container mx-auto px-4 py-6 sm:py-8 overflow-y-scroll h-full">
-      <h2 className="text-xl lg:text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center flex items-center justify-center">
-        <GraduationCap size={24} className="mr-2 sm:mr-3" />
-        My Education Journey
-      </h2>
+      {setFromTab !== "from_tab" ? (
+        <h2 className="text-xl lg:text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center flex items-center justify-center">
+          <GraduationCap size={24} className="mr-2 sm:mr-3" />
+          My Education Journey
+        </h2>
+      ) : (
+        ""
+      )}
+
       <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 sm:gap-6">
         {education_data.map((item) => (
           <EducationCard key={item.id} item={item} />

@@ -10,6 +10,10 @@ import Footer from "@/components/Footer";
 import MobHeader from "@/components/MobHeader";
 import SingleImage from "@/components/SingleImage";
 import Head from "next/head";
+import Skills from "@/components/Skills";
+import Experience from "@/components/Experience";
+import Collage from "@/components/Collage";
+import ProjectsShowcase from "@/components/Project";
 
 export interface IimageData {
   id: number;
@@ -93,13 +97,50 @@ export default function Home() {
           {/* gap */}
           <div className="w-[13%] hidden lg:block"></div>
           <div className="w-[90%] lg:w-[35%]">
-            {activeTab === "Images" ? (
+            {activeTab === "All" && (
+              <>
+                <Suggestion />
+                <Images
+                  setViewSingleImage={setViewSingleImage}
+                  setImageData={setImageData}
+                  setActiveTab={setActiveTab}
+                />
+                <Results />
+              </>
+            )}
+            {activeTab === "Images" && (
               <Images
                 activeTab={activeTab}
                 setViewSingleImage={setViewSingleImage}
                 setImageData={setImageData}
               />
-            ) : (
+            )}
+
+            {activeTab === "Skills" && (
+              <div className="mb-[20rem]">
+                <Skills />
+              </div>
+            )}
+            {activeTab === "Experiences" && (
+              <div className="mb-[20rem]">
+                <Experience setFromTab={"from_tab"} />
+              </div>
+            )}
+
+            {activeTab === "Education" && (
+              <div className="mb-[20rem]">
+                <Collage setFromTab={"from_tab"} />
+              </div>
+            )}
+
+            {activeTab === "Projects" && (
+              <div className="mb-[20rem]">
+                <ProjectsShowcase setFromTab={"from_tab"} />
+              </div>
+            )}
+          </div>
+
+          {/* : (
               <>
                 <Suggestion />
                 <Images
@@ -107,9 +148,7 @@ export default function Home() {
                   setImageData={setImageData}
                 />
                 <Results />
-              </>
-            )}
-          </div>
+              </> */}
           <div className="lg:ml-8 lg:mt-9">
             {viewSingleImage && imageData && (
               <SingleImage

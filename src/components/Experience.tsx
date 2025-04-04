@@ -77,13 +77,17 @@ const ExperienceCard: React.FC<{ experience: ExperienceItem }> = ({
   </div>
 );
 
-const Experience: React.FC = () => {
+const Experience = ({ setFromTab }: any) => {
   return (
     <div className="container mx-auto px-4 py-8 h-full overflow-y-auto flex flex-col">
-      <h2 className="text-xl lg:text-3xl font-bold mb-8 text-center flex items-center justify-center text-gray-800">
-        <Briefcase size={32} className="mr-2 text-blue-600" />
-        Work Experience
-      </h2>
+      {setFromTab !== "from_tab" ? (
+        <h2 className="text-xl lg:text-3xl font-bold mb-8 text-center flex items-center justify-center text-gray-800">
+          <Briefcase size={32} className="mr-2 text-blue-600" />
+          Work Experience
+        </h2>
+      ) : (
+        ""
+      )}
       <div className="flex-grow space-y-6">
         {experiences.map((exp, index) => (
           <ExperienceCard key={index} experience={exp} />
