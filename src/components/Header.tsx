@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import SearchBar from "./SearchBar";
 import { Grip } from "lucide-react";
@@ -12,22 +12,26 @@ export default function Header() {
       setIsSticky(offset > 100);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isSticky 
-        ? 'bg-white shadow-md py-2' 
-        : 'bg-white py-3'
-    }`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isSticky ? "bg-white shadow-md py-2" : "bg-white py-3"
+      }`}
+    >
       <div className="flex items-center justify-between w-full px-6">
         <div className="flex items-center gap-x-5">
-          <div className={`relative ${isSticky ? 'w-[10.5rem] h-[4.5rem]' : 'w-[10.5rem] h-[4.5rem]'} ml-5 transition-all duration-300`}>
+          <div
+            className={`relative ${
+              isSticky ? "w-[10.5rem] h-[4.5rem]" : "w-[10.5rem] h-[4.5rem]"
+            } ml-5 transition-all duration-300`}
+          >
             <Image
               src="/google.png"
               alt="Google"
