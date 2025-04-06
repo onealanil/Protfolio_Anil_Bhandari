@@ -12,7 +12,7 @@ interface ExperienceItem {
 const experiences: ExperienceItem[] = [
   {
     company: "Itahari International College",
-    location: "Remote",
+    location: "Sundar Dulari",
     period: "Jan 2025 - Present",
     position: "Programming Tutor (Graduate Teaching Assistant)",
     responsibilities: [
