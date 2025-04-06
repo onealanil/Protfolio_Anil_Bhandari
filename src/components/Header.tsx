@@ -30,7 +30,7 @@ export default function Header() {
           <div
             className={`relative ${
               isSticky ? "w-[10.5rem] h-[4.5rem]" : "w-[10.5rem] h-[4.5rem]"
-            } ml-5 transition-all duration-300`}
+            } ml-5 transition-all duration-300 cursor-pointer`}
           >
             <Image
               src="/google.png"

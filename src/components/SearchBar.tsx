@@ -25,9 +25,7 @@ const SearchBar = () => {
     setRecognizedText("Listening...");
   };
 
-  const stopListening = () => {
-    setIsListening(false);
-    setShowVoiceModal(false);
+  const searchHandler = () => {
     if (recognizedText && recognizedText !== "Listening...") {
       setSearchTerm(recognizedText);
       window.open(
@@ -35,6 +33,12 @@ const SearchBar = () => {
         "_blank"
       );
     }
+    window.location.reload();
+  };
+
+  const stopListening = () => {
+    setIsListening(false);
+    setShowVoiceModal(false);
   };
 
   useEffect(() => {
@@ -169,7 +173,7 @@ const SearchBar = () => {
             </div>
             <div className="flex justify-center mt-4">
               <button
-                onClick={stopListening}
+                onClick={searchHandler}
                 className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full"
               >
                 {recognizedText ? "Search" : "Stop Listening"}
