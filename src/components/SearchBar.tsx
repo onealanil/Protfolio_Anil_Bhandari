@@ -1,14 +1,16 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Search, Mic, Camera, X } from "lucide-react";
 
 const SearchBar = () => {
-  const [constSearchTerm, setConstSearchTerm] =
-    useState<string>("Anil Bhandari");
+  const [constSearchTerm, setConstSearchTerm] = useState<string>("Anil Bhandari");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [isListening, setIsListening] = useState<boolean>(false);
   const [recognizedText, setRecognizedText] = useState<string>("");
   const [showVoiceModal, setShowVoiceModal] = useState<boolean>(false);
+  const [showCameraModal, setShowCameraModal] = useState<boolean>(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,6 +25,64 @@ const SearchBar = () => {
     setShowVoiceModal(true);
     setIsListening(true);
     setRecognizedText("Listening...");
+  };
+
+  const handleCameraClick = async () => {
+    setShowCameraModal(true);
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      if (videoRef.current) {
+        videoRef.current.srcObject = stream;
+      }
+    } catch (err) {
+      console.error("Error accessing camera:", err);
+      alert("Could not access the camera. Please check permissions.");
+      setShowCameraModal(false);
+    }
+  };
+
+  const captureImage = () => {
+    if (videoRef.current && canvasRef.current) {
+      const context = canvasRef.current.getContext('2d');
+      if (context) {
+        // Set canvas size to match video frame
+        canvasRef.current.width = videoRef.current.videoWidth;
+        canvasRef.current.height = videoRef.current.videoHeight;
+        
+        // Draw the video frame to canvas
+        context.drawImage(videoRef.current, 0, 0);
+        
+        // Add text overlay
+        context.font = '30px Arial';
+        context.fillStyle = 'white';
+        context.textAlign = 'center';
+        context.shadowColor = 'black';
+        context.shadowBlur = 5;
+        
+        // Your filter text
+        const text = "You are so good, wish you a good day!";
+        const x = canvasRef.current.width / 2;
+        const y = canvasRef.current.height - 50;
+        
+        context.fillText(text, x, y);
+        
+        // Convert canvas to image and open in new tab
+        const image = canvasRef.current.toDataURL('image/png');
+        const newWindow = window.open();
+        if (newWindow) {
+          newWindow.document.write(`<img src="${image}" />`);
+        }
+      }
+    }
+  };
+
+  const closeCamera = () => {
+    if (videoRef.current && videoRef.current.srcObject) {
+      const stream = videoRef.current.srcObject as MediaStream;
+      const tracks = stream.getTracks();
+      tracks.forEach(track => track.stop());
+    }
+    setShowCameraModal(false);
   };
 
   const searchHandler = () => {
@@ -83,7 +143,6 @@ const SearchBar = () => {
         <input
           type="text"
           value={constSearchTerm}
-          onChange={(e) => setConstSearchTerm(e.target.value)}
           className="flex-grow w-[10rem] lg:w-[40rem] text-base text-gray-700 focus:outline-none"
           placeholder="Search Google or type a URL"
         />
@@ -120,7 +179,7 @@ const SearchBar = () => {
           </svg>
         </button>
         {/* camera */}
-        <button type="button" className="p-1">
+        <button type="button" className="p-1" onClick={handleCameraClick}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -177,6 +236,38 @@ const SearchBar = () => {
                 className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full"
               >
                 {recognizedText ? "Search" : "Stop Listening"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Camera Modal */}
+      {showCameraModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 max-w-md w-full">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-semibold">Camera</h2>
+              <button
+                onClick={closeCamera}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            <div className="text-center py-4">
+              <video 
+                ref={videoRef} 
+                autoPlay 
+                playsInline 
+                className="w-full h-auto max-h-[60vh] mb-4"
+              />
+              <canvas ref={canvasRef} className="hidden" />
+              <button
+                onClick={captureImage}
+                className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full"
+              >
+                Capture Image
               </button>
             </div>
           </div>
