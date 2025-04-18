@@ -3,7 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { Search, Mic, Camera, X } from "lucide-react";
 
 const SearchBar = () => {
-  const [constSearchTerm, setConstSearchTerm] = useState<string>("Anil Bhandari");
+  const [constSearchTerm, setConstSearchTerm] =
+    useState<string>("Anil Bhandari");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [isListening, setIsListening] = useState<boolean>(false);
   const [recognizedText, setRecognizedText] = useState<string>("");
@@ -43,31 +44,31 @@ const SearchBar = () => {
 
   const captureImage = () => {
     if (videoRef.current && canvasRef.current) {
-      const context = canvasRef.current.getContext('2d');
+      const context = canvasRef.current.getContext("2d");
       if (context) {
         // Set canvas size to match video frame
         canvasRef.current.width = videoRef.current.videoWidth;
         canvasRef.current.height = videoRef.current.videoHeight;
-        
+
         // Draw the video frame to canvas
         context.drawImage(videoRef.current, 0, 0);
-        
+
         // Add text overlay
-        context.font = '30px Arial';
-        context.fillStyle = 'white';
-        context.textAlign = 'center';
-        context.shadowColor = 'black';
+        context.font = "30px Arial";
+        context.fillStyle = "white";
+        context.textAlign = "center";
+        context.shadowColor = "black";
         context.shadowBlur = 5;
-        
+
         // Your filter text
         const text = "You are so good, wish you a good day!";
         const x = canvasRef.current.width / 2;
         const y = canvasRef.current.height - 50;
-        
+
         context.fillText(text, x, y);
-        
+
         // Convert canvas to image and open in new tab
-        const image = canvasRef.current.toDataURL('image/png');
+        const image = canvasRef.current.toDataURL("image/png");
         const newWindow = window.open();
         if (newWindow) {
           newWindow.document.write(`<img src="${image}" />`);
@@ -80,7 +81,7 @@ const SearchBar = () => {
     if (videoRef.current && videoRef.current.srcObject) {
       const stream = videoRef.current.srcObject as MediaStream;
       const tracks = stream.getTracks();
-      tracks.forEach(track => track.stop());
+      tracks.forEach((track) => track.stop());
     }
     setShowCameraModal(false);
   };
@@ -138,7 +139,7 @@ const SearchBar = () => {
     <>
       <form
         onSubmit={handleSubmit}
-        className="flex items-center w-full max-w-2xl bg-white border border-gray-100 rounded-full hover:shadow-md drop-shadow-md focus-within:shadow-md px-5 py-[0.5rem]"
+        className="flex items-center w-full max-w-2xl bg-white border border-gray-100 rounded-full hover:shadow-md drop-shadow-md focus-within:shadow-md px-4 py-2"
       >
         <input
           type="text"
@@ -157,7 +158,11 @@ const SearchBar = () => {
         )}
         <div className="h-7 w-px bg-gray-200 mr-2"></div>
         {/* mic  */}
-        <button type="button" className="p-1 mr-2" onClick={handleVoiceSearch}>
+     <button 
+          type="button" 
+          className="p-1 mx-1 flex items-center justify-center"
+          onClick={handleVoiceSearch}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -167,6 +172,7 @@ const SearchBar = () => {
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
+            className="h-5 w-5"
           >
             <path
               d="M12 2a2.5 2.5 0 0 0-2.5 2.5v7a2.5 2.5 0 0 0 5 0v-7A2.5 2.5 0 0 0 12 2Z"
@@ -179,7 +185,9 @@ const SearchBar = () => {
           </svg>
         </button>
         {/* camera */}
-        <button type="button" className="p-1" onClick={handleCameraClick}>
+        <button type="button" 
+        className="p-1 mx-1 flex items-center justify-center" 
+        onClick={handleCameraClick}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -189,6 +197,7 @@ const SearchBar = () => {
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
+            className="h-5 w-5"
           >
             <path
               d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
@@ -200,7 +209,7 @@ const SearchBar = () => {
             <path d="M9 6h6" stroke="#FBBC05" />
           </svg>
         </button>
-        <Search className="h-6 w-6 text-blue-500 mr-3 ml-3" />
+        <Search className="h-6 w-6 text-blue-500 mr-3 ml-3 hidden md:flex" />
       </form>
 
       {/* Voice Modal */}
@@ -256,10 +265,10 @@ const SearchBar = () => {
               </button>
             </div>
             <div className="text-center py-4">
-              <video 
-                ref={videoRef} 
-                autoPlay 
-                playsInline 
+              <video
+                ref={videoRef}
+                autoPlay
+                playsInline
                 className="w-full h-auto max-h-[60vh] mb-4"
               />
               <canvas ref={canvasRef} className="hidden" />
